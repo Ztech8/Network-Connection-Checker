@@ -1,58 +1,57 @@
 # Network Connection Checker
 
-This Python script allows you to check the availability of a network connection by attempting to establish a connection to a specified host and port.
+The Network Connection Checker is a Python script that allows users to perform various network-related tasks, such as checking a specific host and port, verifying internet connectivity, resolving the IP address of a host, and scanning open ports of a host.
 
-## Prerequisites
+## How to Use
 
-- Python 3.x
+1. Ensure you have Python installed on your system.
 
-## Usage
+2. Clone or download the script from the GitHub repository.
 
-1. Clone or download the repository to your local machine.
-2. Open a terminal or command prompt and navigate to the directory where the script is located.
+3. Open a terminal or command prompt and navigate to the directory where the script is located.
 
-### Running the Script
+4. Run the script using the following command:
 
-1. Run the script by executing the following command:
+```bash
+python network_connection_checker.py
+```
 
-   ```bash
-   python network_connection_checker.py
-   ```
+5. The script will display a menu with the following options:
 
-2. Enter the host name when prompted. This can be the IP address or domain name of the target host.
-3. Enter the port number when prompted. This should be the port on which the connection will be attempted.
+   - Check specific host and port
+   - Check internet connection
+   - Resolve IP address of a host
+   - Scan ports of a host
+   - Exit
 
-### Result
+6. Choose the desired option by entering the corresponding number (1-5) and follow the prompts.
 
-- If a network connection can be established successfully, the following message will be displayed:
+## Options
 
-  ```
-  ================================
-  * Network connection available *
-  ================================
-  ```
+### 1. Check specific host and port
 
-- If a network connection cannot be established, the following message will be displayed:
+This option allows you to check if a specific host and port are reachable on the network.
 
-  ```
-  ===================================
-  * Network connection not available *
-  ===================================
-  ```
+### 2. Check internet connection
 
-## How It Works
+This option verifies if the script can connect to a well-known public host (e.g., example.com) and port (e.g., port 80) to determine internet connectivity.
 
-The script uses the `socket` module in Python to attempt to create a connection with the specified host and port. It checks whether an `OSError` exception occurs while creating the connection. If an exception occurs, it indicates that the network connection is not available. Otherwise, it assumes that a network connection can be established successfully.
+### 3. Resolve IP address of a host
 
-The `check_network()` function takes a host name (string) and port number (integer) as parameters. It attempts to create a connection to the specified host and port using `socket.create_connection()`. If the connection is established within a timeout of 5 seconds, it returns `True`, indicating a successful network connection. Otherwise, it returns `False`.
+Enter the hostname, and the script will attempt to resolve its IP address.
 
-The user is prompted to enter the host name and port number. The script calls the `check_network()` function with the provided values. Based on the return value, it prints the appropriate message indicating the availability of the network connection.
+### 4. Scan ports of a host
 
-## Customization
+Enter the hostname and a range of ports to scan (start_port and end_port). The script will check for open ports within the specified range.
 
-You can modify the code to suit your specific needs:
+### 5. Exit
 
-- Adjust the timeout value (`timeout=5`) in the `socket.create_connection()` function to change the duration for establishing a connection.
-- Customize the messages displayed in the script to match your requirements.
+Choose this option to terminate the Network Connection Checker.
 
-Feel free to modify and integrate this code into your own projects as needed.
+## Contributions
+
+Contributions to the project are welcome. If you encounter any bugs or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+
+## Disclaimer
+
+This script is meant for educational and testing purposes only. Use it responsibly and only on systems you have permission to scan.
